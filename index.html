@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Netflix Basic Layout</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background:#141414;
+    color:#fff;
+}
+
+/* NAVBAR */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:#000;
+    position:sticky;
+    top:0;
+}
+
+.logo{
+    color:#e50914;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.menu a{
+    color:#fff;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:14px;
+}
+
+/* HERO */
+.hero{
+    height:70vh;
+    background:
+    linear-gradient(to top,#141414,rgba(0,0,0,0.4)),
+    url("https://image.tmdb.org/t/p/original/uKvVjHNqB5VmOrdxqAt2F7J78ED.jpg") center/cover;
+    display:flex;
+    align-items:center;
+    padding:40px;
+}
+
+.hero h1{
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+.hero button{
+    padding:12px 25px;
+    background:#e50914;
+    border:none;
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+    border-radius:4px;
+}
+
+/* ROW */
+.row{
+    padding:30px 40px;
+}
+
+.row h2{
+    margin-bottom:15px;
+}
+
+/* GRID */
+.movies{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap:15px;
+}
+
+/* MOVIE CARD */
+.movie{
+    height:280px;
+    background:#222;
+    border-radius:6px;
+    overflow:hidden;
+    position:relative;
+    cursor:pointer;
+    transition:transform 0.3s;
+}
+
+.movie:hover{
+    transform:scale(1.05);
+}
+
+.movie img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* OVERLAY */
+.overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,rgba(0,0,0,0.8),transparent);
+    display:flex;
+    align-items:flex-end;
+    padding:10px;
+    opacity:0;
+    transition:0.3s;
+}
+
+.movie:hover .overlay{
+    opacity:1;
+}
+
+.overlay h4{
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">NETFLIX</div>
+    <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">TV Shows</a>
+        <a href="#">Movies</a>
+        <a href="#">My List</a>
+    </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+    <div>
+        <h1>Unlimited Movies & TV Shows</h1>
+        <button>▶ Watch Now</button>
+    </div>
+</div>
+
+<!-- TRENDING -->
+<div class="row">
+    <h2>Trending Now</h2>
+    <div class="movies">
+
+        <div class="movie">
+            <img src="https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg">
+            <div class="overlay"><h4>Joker</h4></div>
+        </div>
+
+        <div class="movie">
+            <img src="https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg">
+            <div class="overlay"><h4>The Dark Knight</h4></div>
+        </div>
+
+        <div class="movie">
+            <img src="https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg">
+            <div class="overlay"><h4>Avengers: Infinity War</h4></div>
+        </div>
+
+        <div class="movie">
+            <img src="https://image.tmdb.org/t/p/w500/edv5CZvWj09upOsy2Y6IwDhK8bt.jpg">
+            <div class="overlay"><h4>Inception</h4></div>
+        </div>
+
+        <!-- NEW 1 -->
+        <div class="movie">
+            <img src="https://image.tmdb.org/t/p/w500/k68nPLbIST6NP96JmTxmZijEvCA.jpg">
+            <div class="overlay"><h4>Tenet</h4></div>
+        </div>
+
+        <!-- NEW 2 -->
+        <div class="movie">
+            <img src="https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg">
+            <div class="overlay"><h4>Dune</h4></div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
